@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
+#footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+}
+
+#gitLink{
+    text-decoration: none;
+    cursor: pointer;
+    appearance: none;
+    color: #00FF00;
+}

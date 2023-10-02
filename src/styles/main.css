@@ -1,0 +1,21 @@
+#main{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.startBtn{
+    appearance: none;
+    border: none;
+    background: transparent;
+    display: flex;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.startBtn:hover{
+    transform: scale(1.1);
+}
+
