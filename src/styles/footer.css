@@ -13,5 +13,10 @@
     text-decoration: none;
     cursor: pointer;
     appearance: none;
-    color: #00FF00;
+    color: #68c609;
+    transition: 0.3s;
+}
+
+#gitLink:hover{
+    color: #4d8c05;
 }

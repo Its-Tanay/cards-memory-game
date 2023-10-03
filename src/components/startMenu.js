@@ -1,4 +1,4 @@
-import btnImg from '../assets/omnitrix-copy.png';
+import btnImg from '../assets/omnitrix.png';
 
 export default function StartMenu({handleClick}) {
     return (
