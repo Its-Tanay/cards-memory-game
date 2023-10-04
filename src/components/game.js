@@ -1,20 +1,17 @@
-import { useState, useEffect } from "react";
+import React from 'react';
 
-export default function Game({randomImages, handleImageClick}) {
-
-    return (
-        <>
-            <div id="card-grid">
-                {randomImages.map((image, index) => (
-                    <img 
-                        key={index} 
-                        src={image} 
-                        alt={`char${index + 1}`}
-                        onClick={handleImageClick} 
-                        id={`char${index + 1}`}
-                    />
-                ))}
-            </div>
-        </>
-    );
+export default function Game({ random, handleImageClick }) {
+  return (
+    <div id="card-grid">
+      {random.map((character) => (
+        <img
+          key={character.id}
+          src={character.image}
+          alt={`img${character.id}`} 
+          id={`char${character.id}`}
+          onClick={() => handleImageClick(character.id)}
+        />
+      ))}
+    </div>
+  );
 }

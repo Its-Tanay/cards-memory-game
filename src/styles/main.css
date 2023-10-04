@@ -1,9 +1,11 @@
 #main{
-    display: flex;
+    display: grid;
     height: 100%;
     width: 100%;
     align-items: center;
     justify-content: center;
+    grid-template-rows: 80% 20%;
+    gap: 2rem;
 }
 
 .startBtn{
@@ -35,4 +37,23 @@
 
 #card-grid > img:hover{
     transform: scale(1.1);
+}
+
+#main{
+    display: grid;
+    grid-template-rows: 80% 20%;
+    justify-items: center;
+    align-items: end;
+}
+
+#score-board{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#score-board > div{
+    display: grid;
+    grid-template-rows: 1fr 0.5fr;
+    justify-items: center;
+    align-items: center;
 }

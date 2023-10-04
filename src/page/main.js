@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import StartMenu from '../components/startMenu';
 import Game from '../components/game';
+import ScoreBoard from '../components/scoreboard';
 import char1 from "../assets/characters/char1.png";
 import char2 from "../assets/characters/char2.png";
 import char3 from "../assets/characters/char3.png";
@@ -19,79 +20,81 @@ export default function Main() {
     // start menu logic
 
     const [startGame, setStartGame] = useState(false);
+    const [randomChar, setRandomChar] = useState([]);
+    const [clicked, setClicked] = useState([]);
+    const [score, setScore] = useState(0);
+    const [highScore, setHighScore] = useState(0);
+
+    const characters = [
+        { id: 1, image: char1 },
+        { id: 2, image: char2 },
+        { id: 3, image: char3 },
+        { id: 4, image: char4 },
+        { id: 5, image: char5 },
+        { id: 6, image: char6 },
+        { id: 7, image: char7 },
+        { id: 8, image: char8 },
+        { id: 9, image: char9 },
+        { id: 10, image: char10 },
+        { id: 11, image: char11 },
+        { id: 12, image: char12 },
+      ];
+
+    const FisherYatesShuffle = (array) => {
+        let i = array.length;
+        while (i--) {
+            const ri = Math.floor(Math.random() * (i + 1));
+            [array[i], array[ri]] = [array[ri], array[i]];
+        }
+        return array;
+    }
+
+    useEffect(() => {
+        const shuffled = FisherYatesShuffle(characters);
+
+        const selected = shuffled.slice(0, 4);
+
+        console.log(selected);
+
+        setRandomChar(selected);
+    }, [score])
+
+    const handleImageClick = (e) => {
+        if(clicked.includes(e)){
+            setClicked([]);
+            setScore(0);
+        }
+        else{
+            setClicked([...clicked, e]);
+            setScore(score + 1);
+
+            if (score + 1 > highScore) {
+                setHighScore(score + 1); 
+                localStorage.setItem('highScore', score + 1); 
+            }
+        }
+    }
+
+    useEffect(() => {
+        console.log(clicked);
+    })
+
+    useEffect(() => {
+        const savedHighScore = localStorage.getItem('highScore');
+        if (savedHighScore) {
+            setHighScore(Number(savedHighScore));
+        }
+    }, []);    
 
     const handleStartGame = () => {
         setStartGame(true);
     }
 
-    //score logic
-
-    const [clickedIds, setClickedIds] = useState([]);
-    const [score, setScore] = useState(0);
-
-    // game logic
-
-    const allImages = [
-        char1,
-        char2,
-        char3,
-        char4,
-        char5,
-        char6,
-        char7,
-        char8,
-        char9,
-        char10,
-        char11,
-        char12
-    ];
-
-    const [randomImages, setRandomImages] = useState([]);
-
-    // Fisher-Yates shuffle algorithm
-
-    const fisherYateShuffle = (array) => {
-        let currentIndex = array.length;
-        let randomIndex, tempValue;
-
-        while (currentIndex !== 0) {
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex--;
-
-            tempValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = tempValue;
-        }
-      return array;
-    }
-
-    useEffect(() => {
-        const shuffledImages = fisherYateShuffle(allImages);
-
-        const selectedImages = shuffledImages.slice(0, 4);
-
-        setRandomImages(selectedImages);
-    }, [])
-
-    const handleImageClick = (imageId) => {
-        if(clickedIds.includes(imageId)) {
-            setScore(0);
-            setClickedIds([]);
-        }
-        else {
-            const shuffledImages = fisherYateShuffle(allImages);
-            const selectedImages = shuffledImages.slice(0, 4);
-            setRandomImages(selectedImages);
-
-            setClickedIds([...clickedIds, imageId]);
-            setScore(score + 1);
-        }
-    };
-
     if (startGame) {
         return (
             <div id="main">
-                <Game randomImages={randomImages} handleImageClick={handleImageClick}/>
+                <Game random={randomChar} handleImageClick={handleImageClick}/>
+                <ScoreBoard score={score} highScore={highScore}/>
             </div>
         );
     }
