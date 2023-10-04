@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
 #main{
     display: grid;
     height: 100%;
     width: 100%;
-    align-items: center;
+    align-content: center;
     justify-content: center;
+    align-items: center;
+    justify-items: center;
     grid-template-rows: 80% 20%;
-    gap: 2rem;
 }
 
 .startBtn{
@@ -39,16 +42,15 @@
     transform: scale(1.1);
 }
 
-#main{
-    display: grid;
-    grid-template-rows: 80% 20%;
-    justify-items: center;
-    align-items: end;
-}
-
 #score-board{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 40%;
+    font-family: 'Mouse Memoirs', sans-serif;
+    letter-spacing: 0.2rem;
+    font-size: 1.5rem;
+    border: 0.5rem solid #000000;
+    border-radius: 1rem;
 }
 
 #score-board > div{
@@ -56,4 +58,17 @@
     grid-template-rows: 1fr 0.5fr;
     justify-items: center;
     align-items: center;
+    gap: 0.5rem;
+}
+
+.green-text{
+    color: #68c609;
+}
+
+#score{
+    border-right: 0.5rem solid black;
+}
+
+#high-score{
+    border-left: 0.5rem solid black;
 }
