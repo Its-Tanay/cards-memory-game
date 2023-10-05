@@ -11,17 +11,36 @@
     grid-template-rows: 80% 20%;
 }
 
-.startBtn{
+.start-button{
     appearance: none;
     border: none;
     background: transparent;
     display: flex;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    position: relative;
+    animation: beat 0.6s ease-in-out infinite;
 }
 
-.startBtn:hover{
-    transform: scale(1.1);
+.spin {
+  animation: spin 3s linear infinite; 
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #card-grid{
@@ -51,6 +70,7 @@
     font-size: 1.5rem;
     border: 0.5rem solid #000000;
     border-radius: 1rem;
+    background-color: aliceblue;
 }
 
 #score-board > div{

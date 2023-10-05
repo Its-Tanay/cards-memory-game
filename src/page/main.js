@@ -17,8 +17,6 @@ import char12 from "../assets/characters/char12.png";
 
 export default function Main() {
 
-    // start menu logic
-
     const [startGame, setStartGame] = useState(false);
     const [randomChar, setRandomChar] = useState([]);
     const [clicked, setClicked] = useState([]);
