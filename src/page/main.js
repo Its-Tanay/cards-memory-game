@@ -55,6 +55,8 @@ export default function Main() {
         console.log(selected);
 
         setRandomChar(selected);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [score])
 
     const handleImageClick = (e) => {
