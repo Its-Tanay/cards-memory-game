@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import StartMenu from '../components/startMenu';
 import Game from '../components/game';
-import ScoreBoard from '../components/scoreboard';
 import char1 from "../assets/characters/char1.png";
 import char2 from "../assets/characters/char2.png";
 import char3 from "../assets/characters/char3.png";
@@ -14,6 +13,7 @@ import char9 from "../assets/characters/char9.png";
 import char10 from "../assets/characters/char10.png";
 import char11 from "../assets/characters/char11.png";
 import char12 from "../assets/characters/char12.png";
+import ScoreBoard from '../components/scoreboard';
 
 export default function Main() {
 
