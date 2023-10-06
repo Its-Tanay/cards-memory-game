@@ -30,6 +30,7 @@ Follow these instructions to set up and run the project on your local machine.
 
 ```
 
+```bash
 ### Usage
 
 1. Start the development server.
@@ -37,6 +38,7 @@ Follow these instructions to set up and run the project on your local machine.
     `npm start`
 
 2. Open your browser and navigate to `http://localhost:3000` to play the game.
+```
 
 ### How to Play
 
@@ -53,7 +55,7 @@ Follow these instructions to set up and run the project on your local machine.
 ```markdown
 - [React](https://reactjs.org/) - The JavaScript library for building the user interface.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Styling the components.
-- [FontAwesome](https://fontawesome.com/) - Icons used for the game.
+- [Framer-Motion](https://www.framer.com/motion) - Used for animating components.
 ```
 
 ### Author
