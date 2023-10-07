@@ -30,9 +30,10 @@ Follow these instructions to set up and run the project on your local machine.
 
 ```
 
-```bash
+
 ### Usage
 
+```bash
 1. Start the development server.
 
     `npm start`
