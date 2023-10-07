@@ -1,6 +1,6 @@
 # Memory Card Game
 
-The Memory Card Game is a challenging memory-testing game built with React. Players must remember the cards they've already clicked on and avoid clicking the same card twice while trying to find matching pairs of characters.
+The Memory Card Game is a challenging memory-testing game built with React. Players must remember the cards they've already clicked on and avoid clicking the same card twice.
 
 ## Features
 
@@ -45,7 +45,6 @@ Follow these instructions to set up and run the project on your local machine.
 
 ```markdown
 - Click on the cards to flip them over.
-- Your objective is to find matching pairs of characters.
 - Be careful not to click the same card twice, as it will reset your score.
 - Keep track of the characters behind each card and aim for a high score.
 - Challenge yourself and your memory skills!
@@ -55,7 +54,7 @@ Follow these instructions to set up and run the project on your local machine.
 
 ```markdown
 - [React](https://reactjs.org/) - The JavaScript library for building the user interface.
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Styling the components.
+- [Vanilla CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Styling the components.
 - [Framer-Motion](https://www.framer.com/motion) - Used for animating components.
 ```
 
